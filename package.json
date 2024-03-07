@@ -2,17 +2,27 @@
   "name": "data-grid-lab",
   "version": "1.0.0",
   "description": "An illustrative example of a reimplementation of React's diffing algorithm in vanilla JavaScript.",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
-    "build": "npx tailwindcss -o ./input.css -o ./output.css --minify",
-    "start": "npx serve",
+    "dev": "webpack serve",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Przemyslaw Kalka",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "css-loader": "^6.10.0",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.4.0",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1"
   }
 }
