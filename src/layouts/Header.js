@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Button } from "../components";
 
 const Header = () => ({
   type: "header",
@@ -37,7 +37,7 @@ const Header = () => ({
               children: [
                 {
                   type: "div",
-                  props: { class: "flex-shrink-0 space-x-1"  },
+                  props: { class: "flex-shrink-0 space-x-1" },
                   children: [
                     Button({
                       d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z",
