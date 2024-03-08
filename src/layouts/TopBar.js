@@ -1,6 +1,6 @@
 import { Icon } from "../components";
 
-const Navbar = () => ({
+const TopBar = () => ({
   type: "nav",
   props: { class: "bg-gray-800" },
   children: [
@@ -64,4 +64,4 @@ const Navbar = () => ({
   ],
 });
 
-export default Navbar;
+export default TopBar;
