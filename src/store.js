@@ -1,4 +1,4 @@
-class Feed {
+class Store {
   constructor({ streamingInterval, numberOfRows }) {
     this.state = { rows: [], isStreaming: false };
     this.subscribers = [];
@@ -108,4 +108,4 @@ class Feed {
   }
 }
 
-export default new Feed({ streamingInterval: 1000, numberOfRows: 5 });
+export default new Store({ streamingInterval: 1000, numberOfRows: 5 });

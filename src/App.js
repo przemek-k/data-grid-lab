@@ -1,13 +1,13 @@
 import { Button, Icon, VanishingSpan, Table } from "./components";
 import { TopBar, ControlPanel, Main } from "./layouts";
-import { feed } from "./services";
+import store from "./store";
 
 /* Handlers */
-const insertRows = () => feed.dispatch({ type: "INSERT_ROWS" });
-const removeRows = () => feed.dispatch({ type: "REMOVE_ROWS" });
-const replaceRows = () => feed.dispatch({ type: "REPLACE_ROWS" });
-const updateRows = () => feed.dispatch({ type: "UPDATE_ROWS" });
-const streamingUpdates = () => feed.dispatch({ type: "TOGGLE_STREAMING" });
+const insertRows = () => store.dispatch({ type: "INSERT_ROWS" });
+const removeRows = () => store.dispatch({ type: "REMOVE_ROWS" });
+const replaceRows = () => store.dispatch({ type: "REPLACE_ROWS" });
+const updateRows = () => store.dispatch({ type: "UPDATE_ROWS" });
+const streamingUpdates = () => store.dispatch({ type: "TOGGLE_STREAMING" });
 
 const App = ({ isStreaming, rows }) => {
   const noRows = rows.length === 0;

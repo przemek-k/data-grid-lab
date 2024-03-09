@@ -1,8 +1,8 @@
 import "./style.css";
 import { updateElement } from "./dom";
-import { logger } from "./services";
+import { logger } from "./utils";
 import App from "./App";
-import { feed } from "./services";
+import store from "./store";
 
 /* Prevents flashes of unstyled SVGs */
 document.addEventListener(
@@ -24,5 +24,5 @@ const render = () => {
   };
 };
 
-feed.dispatch({ type: "INIT" });
-feed.subscribe(render());
+store.dispatch({ type: "INIT" });
+store.subscribe(render());

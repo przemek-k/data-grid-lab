@@ -1,4 +1,4 @@
-import { classNames } from "../services";
+import { classNames } from "../utils";
 
 const Button = ({ children, disabled, onClick }) => ({
   type: "button",
