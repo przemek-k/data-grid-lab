@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "production",
+  mode: process.env.NODE_ENV || "development", // Default to development if not set
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "public"),

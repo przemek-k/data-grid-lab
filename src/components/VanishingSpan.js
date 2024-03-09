@@ -1,7 +1,7 @@
-const HiddenSpan = ({ children }) => ({
+const HiddenSpan = (text) => ({
   type: "span",
   props: { class: "hidden lg:block" },
-  children: ["Insert Rows"],
+  children: [text],
 });
 
 export default HiddenSpan;
