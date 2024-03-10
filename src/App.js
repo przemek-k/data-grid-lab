@@ -65,7 +65,7 @@ const App = ({ isStreaming, rows }) => {
           }),
         ],
       }),
-      Main({ children: [Table()] }),
+      Main({ children: [Table({ rows })] }),
     ],
   };
 };

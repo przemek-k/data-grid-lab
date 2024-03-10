@@ -11,16 +11,16 @@ document.addEventListener(
 );
 
 const render = () => {
-  let prev = null;
+  let prevState = null;
 
-  return (state) => {
-    if (process.env.NODE_ENV === "development") logger(state);
+  return (nextState) => {
+    if (process.env.NODE_ENV === "development") logger(prevState, nextState);
     updateElement(
       document.getElementById("root"),
-      App(state),
-      prev && App(prev)
+      App(nextState),
+      prevState && App(prevState)
     );
-    prev = { ...state };
+    prevState = { ...nextState };
   };
 };
 
