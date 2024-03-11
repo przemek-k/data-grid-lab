@@ -1,33 +1,25 @@
-import { SVG_ELEMENTS } from "./constants";
+import { SVG_ELEMENTS, xlink } from "./constants";
 
 const setProperties = (element, props) => {
+  const tagNameLower = element.tagName.toLowerCase(); // Cache tagName in lowercase
   Object.entries(props).forEach(([propName, propValue]) => {
-    // Check if dealing with an SVG element and set attributes with or without namespace
-    if (SVG_ELEMENTS.includes(element.tagName.toLowerCase())) {
-      // For SVG elements, use setAttributeNS for attributes that need it
-      // Here we use null for the namespaceURI parameter for attributes that are in no namespace
-      // For certain attributes like 'xlink:href', a proper namespace URI should be used
-      if (propName === "href" && element.tagName.toLowerCase() === "use") {
-        element.setAttributeNS(
-          "http://www.w3.org/1999/xlink",
-          "href",
-          propValue
-        );
+    if (SVG_ELEMENTS.includes(tagNameLower)) {
+      // Directly set attributes for SVG elements, handling 'href' for 'use' tag specifically
+      if (propName === "href" && tagNameLower === "use") {
+        element.setAttributeNS(xlink, "href", propValue);
       } else {
         element.setAttributeNS(null, propName, propValue);
       }
     } else if (propName.startsWith("on") && typeof propValue === "function") {
-      // Assuming propName is in the form 'onClick', 'onSubmit', etc.
-      // Here we register event listeners directly
-      element.addEventListener(propName.substring(2).toLowerCase(), propValue);
+      // Register event listeners for props starting with 'on'
+      element.addEventListener(propName.slice(2).toLowerCase(), propValue);
     } else if (typeof propValue === "boolean") {
-      // Specifically for boolean attributes. Example: 'disabled'
-      // If the value is true, add the attribute, otherwise ensure it's not present
+      // Handle boolean attributes, adding or removing based on truthiness
       propValue
         ? element.setAttribute(propName, "")
         : element.removeAttribute(propName);
     } else {
-      // For non-SVG elements or attributes not requiring namespaces
+      // Default case: Set regular attributes
       element.setAttribute(propName, propValue);
     }
   });
