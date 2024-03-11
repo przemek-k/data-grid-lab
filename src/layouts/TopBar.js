@@ -42,7 +42,8 @@ const TopBar = () => ({
                     {
                       type: "a",
                       props: {
-                        href: "#",
+                        href: "https://github.com/przemek-k/data-grid-lab",
+                        target: "_blank",
                         class:
                           "inline-flex items-center gap-x-1.5 rounded-md bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-100",
                       },

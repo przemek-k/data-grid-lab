@@ -2,6 +2,10 @@
 
 An illustrative example of a reimplementation of React's diffing algorithm in vanilla JavaScript. This project aims to provide insight into how virtual DOM diffing operates, using a simplified version written purely in JavaScript without relying on React.
 
+## Live Demo
+
+Experience the Data Grid Lab in your browser through a [hosted demo](https://przemek-k.github.io/data-grid-lab/).
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

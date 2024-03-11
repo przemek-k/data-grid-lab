@@ -7,7 +7,8 @@
     "dev": "webpack serve",
     "build": "export NODE_ENV=production && webpack",
     "start": "npx serve ./public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ./public"
   },
   "keywords": [],
   "author": "Przemyslaw Kalka",
@@ -16,6 +17,7 @@
     "autoprefixer": "^10.4.18",
     "css-loader": "^6.10.0",
     "cssnano": "^6.1.0",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.35",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.4.0",
