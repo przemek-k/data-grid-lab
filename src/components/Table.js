@@ -1,13 +1,13 @@
 import { classNames } from "../utils";
 
 const COL_DEFS = [
-  { id: "id", label: "Id" },
-  { id: "code", label: "Code" },
-  { id: "name", label: "Name" },
-  { id: "bid", label: "Bid" },
-  { id: "mid", label: "Mid" },
-  { id: "ask", label: "Ask" },
-  { id: "volume", label: "Volume" },
+  { field: "id", label: "Id" },
+  { field: "code", label: "Code" },
+  { field: "name", label: "Name" },
+  { field: "bid", label: "Bid" },
+  { field: "mid", label: "Mid" },
+  { field: "ask", label: "Ask" },
+  { field: "volume", label: "Volume" },
 ];
 
 const HeaderCell = ({ first, value }) => ({
@@ -57,9 +57,9 @@ const Table = ({ rows }) => ({
       props: { class: "divide-y divide-gray-200 bg-white" },
       children: rows.map((row) => ({
         type: "tr",
-        props: {},
-        children: COL_DEFS.map(({ id }, i) =>
-          ValueCell({ first: i === 0, value: row[id] })
+        props: { key: row.id },
+        children: COL_DEFS.map(({ field }, i) =>
+          ValueCell({ first: i === 0, value: row[field] })
         ),
       })),
     },
