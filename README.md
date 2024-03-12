@@ -84,7 +84,7 @@ This project is licensed under the ISC License - see the LICENSE.md file for det
 
 ## Authors
 
-Przemyslaw Kalka - [LinkedIn](https://www.linkedin.com/in/przemyslawkalka/en)
+ [Przemyslaw Kalka](https://www.linkedin.com/in/przemyslawkalka/en)
 
 ## Acknowledgments
 
